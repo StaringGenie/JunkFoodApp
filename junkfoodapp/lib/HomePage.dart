@@ -3,12 +3,17 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'FoodPage.dart';
+
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
+  List items = [FoodPage()];
+  int selectedScreen = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,7 +64,7 @@ class _HomePageState extends State<HomePage> {
         ),
         actions: <Widget>[],
       ),
-      body: Container(),
+      body: items[selectedScreen],
     );
   }
 }
